@@ -77,7 +77,7 @@
     }
     .highlight { color: #bfdbfe; font-weight: 600; }
 
-    /* 右边游戏 */
+    /* Right side game */
     .game-header-row {
       display: flex;
       justify-content: space-between;
@@ -252,7 +252,7 @@
 </head>
 <body>
 <div class="app">
-  <!-- 左边说明 -->
+  <!-- Left panel: explanations -->
   <aside class="panel">
     <div class="panel-header">
       <div class="title">Resonance Puzzle</div>
@@ -295,7 +295,7 @@
     </div>
   </aside>
 
-  <!-- 右边游戏 -->
+  <!-- Right panel: game -->
   <main class="panel">
     <div class="game-header-row">
       <div>
@@ -314,11 +314,11 @@
           O = N – O<sup>−</sup>
         </div>
 
-        <!-- 正确 target：左右 O -->
+        <!-- Correct targets: both O atoms -->
         <div class="drop-zone zone-leftO" data-zone-id="leftO" data-correct="true"></div>
         <div class="drop-zone zone-rightO" data-zone-id="rightO" data-correct="true"></div>
 
-        <!-- 错误 target：N 上面 -->
+        <!-- Incorrect target: above N -->
         <div class="drop-zone zone-wrongN wrong" data-zone-id="wrongN" data-correct="false"></div>
       </div>
 
@@ -375,7 +375,7 @@
     }
   }
 
-  // 把电子球移到 puzzleArea 里面，坐标以 puzzleArea 为参考
+  // Move tokens into puzzleArea and record home positions relative to puzzleArea
   function initPositions() {
     const puzzleRect = puzzleArea.getBoundingClientRect();
 
@@ -385,7 +385,7 @@
       const homeLeft = rect.left - puzzleRect.left;
       const homeTop  = rect.top  - puzzleRect.top;
 
-      // 把 token 直接挂到 puzzleArea
+      // Attach token directly to puzzleArea
       puzzleArea.appendChild(token);
 
       token.style.position = "absolute";
